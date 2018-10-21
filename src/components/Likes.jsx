@@ -24,16 +24,32 @@
 	 // increase or decrease the likes based on whether button click is like/ unlike
 	 // hint: take the total likes as a prop, and convert it to state
 
-import React from 'react';
+import React, { Component } from 'react';
 
-const Likes = (props) => {
-	const { likes } = props
-	return (
+class Likes extends Component {
+	constructor (props) {
+		super(props)
+		this.state = {
+			likes: 0,
+			notLikedYet: true
+		}
+	}
+	render(){
+		const { likes } = this.state.likes;
+		return (
 		<div>
-			Likes: <span>{ likes } </span>
-			<button></button>
+			Likes: <span>{ this.state.likes } </span>
+			<button onClick={(e) =>this.setState(
+						{ notLikedYet: false })}
+			>
+				{ this.state.notLikedYet
+					? "Not liked (yet)"
+					: "Liked"
+				}
+			</button>
 		</div>
-		)
+		);
+	}
 }
 
-export default Likes
+export default Likes;

@@ -19,7 +19,7 @@ const Header = () => {
 			<li>Home</li>
 			<li>Profile</li>
 		</ul>
-		)
+		);
 }
 
-export default Header
+export default Header;

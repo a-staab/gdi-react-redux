@@ -34,15 +34,17 @@
     // Then pass in that function as props to ImageUploaderForm
     // and when the user submits, call that function with the user submitted url.
 
-import React from 'react';
+import React, { Component } from 'react';
 
-const ImageUploaderForm = () => {
-	return (
+class ImageUploaderForm extends Component {
+	render(){
+		return (
 		<form className="ImageUploaderForm">
 			<input></input>
 			<button></button>
 		</form>
-		)
+		);
+	}
 }
 
-export default ImageUploaderForm
+export default ImageUploaderForm;

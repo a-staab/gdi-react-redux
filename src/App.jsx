@@ -23,7 +23,7 @@ const App = () => {
 		  <Header />
 		  <HomePage />
 	  </div>
-	  )
+	  );
 }
 
-export default App
+export default App;
