@@ -25,3 +25,14 @@
 	 // hint: take the total likes as a prop, and convert it to state
 
 import React from 'react';
+
+const Likes = () => {
+	return (
+		<div>
+			<span></span>
+			<button></button>
+		</div>
+		)
+}
+
+export default Likes
