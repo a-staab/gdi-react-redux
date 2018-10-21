@@ -35,3 +35,15 @@
     // and when the user submits, call that function with the user submitted url.
 
 import React from 'react';
+
+const ImageUploaderForm = () => {
+	return (
+		<form className="ImageUploaderForm">
+			<input>
+				<button></button>
+			</input>
+		</form>
+		)
+}
+
+export default ImageUploaderForm
