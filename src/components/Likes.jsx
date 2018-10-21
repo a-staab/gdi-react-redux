@@ -30,14 +30,20 @@ class Likes extends Component {
 	constructor (props) {
 		super(props)
 		this.state = {
-			notLiked: true
+			notLiked: true,
+			totalLikes: props.likes
 		}
 	}
+
+	//declare a function
+	// do some logic: if its currently liked, need to increase totalLikes by 1
+	//                if it's currenlty not like, need to decrease totalLikes by1
+	// then set the state for both notLiked and new totalLikes value
+	
 	render(){
-		const { likes } = this.props;
 		return (
 		<div>
-			Likes: <span>{ likes }</span>
+			Likes: <span>{ this.state.totalLikes }</span>
 			<button onClick={(e) =>
 				this.setState({ notLiked: !this.state.notLiked})
 			}>
@@ -50,22 +56,5 @@ class Likes extends Component {
 		);
 	}
 }
-
-// <LikesCounter likesCount={likes} />
-// class LikesCounter extends Component {
-// 		constructor (props) {
-// 			super(props)
-// 			this.state = {
-// 				numLikes: props.likes
-// 			}
-// 		}
-// 		render(){
-// 		return(
-// 			<div>
-// 				Likes: <span>{ this.state.numLikes }</span>
-// 			</div>
-// 			)
-// 	}
-//}
 
 export default Likes;
