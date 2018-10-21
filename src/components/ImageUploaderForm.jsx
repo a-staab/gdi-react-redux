@@ -39,9 +39,8 @@ import React from 'react';
 const ImageUploaderForm = () => {
 	return (
 		<form className="ImageUploaderForm">
-			<input>
-				<button></button>
-			</input>
+			<input></input>
+			<button></button>
 		</form>
 		)
 }

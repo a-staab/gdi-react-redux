@@ -22,12 +22,16 @@
 
 import React from 'react';
 import data from '../../data.json';
+import ImageUploaderForm from "../components/ImageUploaderForm.jsx";
+import FeedList from "../components/FeedList.jsx"
 
 const HomePage = () => {
+	const { photos } = data
 	return (
 		<div className="HomePage">
 			<ImageUploaderForm />
-			<FeedList />
+			<FeedList 
+				photos={photos}/> 
 		</div>
 		)
 }

@@ -21,7 +21,7 @@ const App = () => {
 	return (
 	  <div className="App">
 		  <Header />
-		  <Homepage />
+		  <HomePage />
 	  </div>
 	  )
 }

@@ -26,10 +26,11 @@
 
 import React from 'react';
 
-const Likes = () => {
+const Likes = (props) => {
+	const { likes } = props
 	return (
 		<div>
-			<span></span>
+			Likes: <span>{ likes } </span>
 			<button></button>
 		</div>
 		)
