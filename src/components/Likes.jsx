@@ -30,20 +30,19 @@ class Likes extends Component {
 	constructor (props) {
 		super(props)
 		this.state = {
-			likes: 0,
-			notLikedYet: true
+			notLiked: true
 		}
 	}
 	render(){
-		const { likes } = this.state.likes;
+		const { likes } = this.props;
 		return (
 		<div>
-			Likes: <span>{ this.state.likes } </span>
-			<button onClick={(e) =>this.setState(
-						{ notLikedYet: false })}
-			>
-				{ this.state.notLikedYet
-					? "Not liked (yet)"
+			Likes: <span>{ likes }</span>
+			<button onClick={(e) =>
+				this.setState({ notLiked: !this.state.notLiked})
+			}>
+				{ this.state.notLiked
+					? "Not liked"
 					: "Liked"
 				}
 			</button>
@@ -51,5 +50,22 @@ class Likes extends Component {
 		);
 	}
 }
+
+// <LikesCounter likesCount={likes} />
+// class LikesCounter extends Component {
+// 		constructor (props) {
+// 			super(props)
+// 			this.state = {
+// 				numLikes: props.likes
+// 			}
+// 		}
+// 		render(){
+// 		return(
+// 			<div>
+// 				Likes: <span>{ this.state.numLikes }</span>
+// 			</div>
+// 			)
+// 	}
+//}
 
 export default Likes;
