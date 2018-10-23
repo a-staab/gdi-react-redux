@@ -39,24 +39,22 @@ class HomePage extends Component {
 	handleAddPhoto (url) {
 		const newPhotos = this.state.photos;
 		newPhotos.push({
-							"id": this.state.photos.length + 1,
-						 	"title": `User-uploaded img with id ${this.state.photos.length + 1}`,
-						 	"url": url,
-						 	"likes": 0,
-						 	"userLiked": false
-						});
+			"id": this.state.photos.length + 1,
+			"title": `User-uploaded img with id ${this.state.photos.length + 1}`,
+			"url": url,
+			"likes": 0,
+			"userLiked": false
+		});
 		this.setState({photos: newPhotos});
 	}
 
 	render(){
 		return (
 			<div className="HomePage">
-				<ImageUploaderForm 
-					handleAddPhoto={this.handleAddPhoto}/>
-				<FeedList 
-					photos={this.state.photos}/> 
+				<ImageUploaderForm handleAddPhoto={this.handleAddPhoto}/>
+				<FeedList photos={this.state.photos}/> 
 			</div>
-		);
+			);
 	}
 }
 
