@@ -28,12 +28,33 @@ import FeedList from "../components/FeedList.jsx"
 const { photos } = data;
 
 class HomePage extends Component {
+	constructor (props) {
+		super(props);
+		this.state = {
+			photos: photos
+		};
+		this.handleAddPhoto = this.handleAddPhoto.bind(this);
+	}
+	
+	handleAddPhoto (url) {
+		const newPhotos = this.state.photos;
+		newPhotos.push({
+							"id": this.state.photos.length + 1,
+						 	"title": `User-uploaded img with id ${this.state.photos.length + 1}`,
+						 	"url": url,
+						 	"likes": 0,
+						 	"userLiked": false
+						});
+		this.setState({photos: newPhotos});
+	}
+
 	render(){
 		return (
 			<div className="HomePage">
-				<ImageUploaderForm />
+				<ImageUploaderForm 
+					handleAddPhoto={this.handleAddPhoto}/>
 				<FeedList 
-					photos={photos}/> 
+					photos={this.state.photos}/> 
 			</div>
 		);
 	}

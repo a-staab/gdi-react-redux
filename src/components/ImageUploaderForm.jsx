@@ -50,10 +50,11 @@ class ImageUploaderForm extends Component {
 	
 	handleClick = (evt) => {
 		evt.preventDefault();
-		console.log(`${this.state.newUrl}`);
+		this.props.handleAddPhoto(this.state.newUrl);
 	}
 
 	render(){
+		const { handleAddPhoto } = this.props;
 		return (
 		<form className="ImageUploaderForm">
 			<input type="text" value={this.state.newUrl} onChange={this.handleChange}></input>
