@@ -35,17 +35,24 @@ class Likes extends Component {
 		}
 	}
 
-	//declare a function
-	// do some logic: if its currently liked, need to increase totalLikes by 1
-	//                if it's currenlty not like, need to decrease totalLikes by1
-	// then set the state for both notLiked and new totalLikes value
+	updateLikes() {
+		let { totalLikes } = this.state;
+		this.state.notLiked
+			? totalLikes++
+			: totalLikes--
+		return totalLikes
+	}
 	
 	render(){
 		return (
 		<div>
 			Likes: <span>{ this.state.totalLikes }</span>
 			<button onClick={(e) =>
-				this.setState({ notLiked: !this.state.notLiked})
+				this.setState(
+					{ notLiked: !this.state.notLiked,
+					  totalLikes: this.updateLikes()
+					}
+				)
 			}>
 				{ this.state.notLiked
 					? "Not liked"
